@@ -1,0 +1,42 @@
+// ========================================================
+// CodeInsight - MiniLang Optimizer Showcase
+// ========================================================
+
+int compute(int x, int y) {
+    // 1. Constant Folding opportunity (10 + 20 * 2 -> 50)
+    int base = 10 + 20 * 2;
+
+    // 2. Algebraic Simplification (x * 1 + 0 -> x)
+    int adjusted = x * 1 + 0;
+
+    // 3. Redundant / Dead assignment
+    int temp = 999;
+    temp = base + adjusted;
+
+    // 4. Strength Reduction (temp * 2 -> temp << 1)
+    int doubled = temp * 2;
+
+    // 5. Common Subexpression Elimination
+    int part1 = (x + y) * 3;
+    int part2 = (x + y) + 7;
+
+    // 6. Unused variable
+    int unusedVar = 100;
+
+    // 7. Loop invariant code motion
+    int sum = 0;
+    int i = 0;
+    while (i < 10) {
+        int invariantVal = x * 5 + 4;
+        sum = sum + invariantVal + i;
+        i = i + 1;
+    }
+
+    // 8. Tautological condition & unreachable code
+    if (10 > 5) {
+        return sum + doubled + part1 + part2;
+    } else {
+        int unreachableVal = 404;
+        return 0;
+    }
+}

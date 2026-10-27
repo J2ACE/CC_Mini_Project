@@ -1,0 +1,12 @@
+// Test Case: Loop-Invariant Code Motion
+int loopCalculations(int factor, int limit) {
+    int sum = 0;
+    int i = 0;
+    while (i < limit) {
+        // factor * 10 is invariant because factor is never modified in the loop
+        int invariantTerm = factor * 10;
+        sum = sum + invariantTerm + i;
+        i = i + 1;
+    }
+    return sum;
+}

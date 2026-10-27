@@ -1,0 +1,7 @@
+// Test Case: Strength Reduction
+int transform(int n) {
+    int mul2 = n * 2;   // OPT005: replace with n << 1
+    int mul8 = n * 8;   // OPT005: replace with n << 3
+    int div4 = n / 4;   // OPT005: replace with n >> 2
+    return mul2 + mul8 + div4;
+}

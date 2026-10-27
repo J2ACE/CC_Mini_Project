@@ -1,0 +1,14 @@
+// Test Case: Semantic Type Violations
+int add(int a, int b) {
+    return a + b;
+}
+
+int checkErrors() {
+    int x = true;       // SEM004: Type mismatch
+    badVar = 50;        // SEM001: Undeclared identifier
+    add(10);            // SEM008: Arity mismatch
+    if (12345) {        // SEM005: Non-boolean condition
+        return 0;
+    }
+    return x;
+}

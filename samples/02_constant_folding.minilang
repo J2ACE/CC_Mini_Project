@@ -1,0 +1,8 @@
+// Test Case: Constant Folding & Constant Propagation
+int calculate() {
+    int daySeconds = 60 * 60 * 24;
+    int baseVal = 100 + 200 * 3;
+    int x = 25;
+    int y = x + 15;
+    return daySeconds + baseVal + y;
+}

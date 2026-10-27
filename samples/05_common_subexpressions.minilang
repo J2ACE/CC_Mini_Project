@@ -1,0 +1,7 @@
+// Test Case: Common Subexpression Elimination
+int computeFormulas(int a, int b) {
+    int r1 = (a + b) * 5;
+    int r2 = (a + b) + 10;
+    int r3 = (a + b) * 20;
+    return r1 + r2 + r3;
+}

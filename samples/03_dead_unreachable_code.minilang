@@ -1,0 +1,15 @@
+// Test Case: Dead Stores and Unreachable Code
+int processStatus(int code) {
+    int tracker = 1;
+    tracker = 2; // STA004: Dead store / redundant assignment
+
+    if (code > 0) {
+        return 100;
+    } else {
+        return -100;
+    }
+
+    // Unreachable statements (STA003)
+    int neverRun = 9999;
+    return neverRun;
+}

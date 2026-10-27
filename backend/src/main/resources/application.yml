@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: codeinsight-backend
+  jackson:
+    serialization:
+      indent-output: true
+
+logging:
+  level:
+    com.codeinsight: INFO
+    org.springframework.web: INFO
